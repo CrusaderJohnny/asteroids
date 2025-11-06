@@ -6,6 +6,7 @@ from asteroid import Asteroid
 from constants import *
 from player import Player
 from shot import Shot
+from logger import log_state
 
 
 def main():
@@ -26,9 +27,14 @@ def main():
     asteroidfield = AsteroidField()
 
     player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+    print("Starting Asteroids!")
+    print(f"Screen width: {SCREEN_WIDTH}")
+    print(f"Screen height: {SCREEN_HEIGHT}")
+
 
     dt = 0
     while True:
+        log_state()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
